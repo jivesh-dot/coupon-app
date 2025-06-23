@@ -13,9 +13,9 @@ Please refer to .env for configurations
 
 - Postman Dump:
 
-  ```
-  [Download Postman Collection](postman/holo-voucher.postman_collection.json)
-  ```
+  Collection -> [Download Postman Collection](postman/holo-voucher.postman_collection.json)
+  Env -> [Download Postman Collection](postman/holo.postman_environment.json)
+  
 
 ---
 
@@ -45,7 +45,7 @@ Please refer to .env for configurations
 3. **Environment Variables**
 
    - All required environment variables are defined in the `.env` file.
-   - Update them based on your environment or infrastructure.
+   - Update them based on your environment or infrastructure. (Note: PostgreSQL database named voucherdb is created at docker-compose build)
 
 ---
 
@@ -105,20 +105,6 @@ Please refer to .env for configurations
   "description": "Launch Offer",
   "discountAmount": 10,
   "expirationDate": "2025-12-31"
-}
-```
-
-#### `user_coupon` Table (after user generates a coupon)
-
-```json
-{
-  "id": 1,
-  "userId": 1,
-  "specialOfferId": 1,
-  "couponCode": "COUPON12345",
-  "createdAt": "2025-06-22T00:00:00Z",
-  "redeemedAt": null,
-  "isRedeemed": false
 }
 ```
 
