@@ -29,7 +29,7 @@ Please refer to .env for configurations
 1. **Clone the Repository**
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/jivesh-dot/coupon-app.git
    cd coupon-service
    ```
 
