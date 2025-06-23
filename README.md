@@ -117,6 +117,7 @@ Please refer to .env for configurations
 ---
 
 ## Test Cases
-npm test
+  docker exec -it 5de12e8a4327 /bin/sh
+  npm test
 
 ## Rate Limiter added for Voucher APi's 
