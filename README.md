@@ -112,6 +112,7 @@ Please refer to .env for configurations
 
 - Redis Set: `available-coupons`
 - Contains **1000 unique coupon codes** seeded and ready for use.
+- This command can be added to cron for auto generation
 
 ---
 
