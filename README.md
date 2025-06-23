@@ -1,6 +1,6 @@
 # Coupon Service
 
-A service to generate and redeem coupon codes using PostgreSQL(Relational Entries), MongoDB(Logging created Coupons) and Redis(Coupon Codes).
+A service to generate and redeem coupon codes using NestJS(Web Framework) PostgreSQL(Relational Entries), MongoDB(Logging created Coupons) and Redis(Coupon Codes).
 Please refer to .env for configurations
 
 ## API Documentation
@@ -117,3 +117,5 @@ Please refer to .env for configurations
 
 ## Test Cases
 npm test
+
+## Rate Limiter added for Voucher APi's 
