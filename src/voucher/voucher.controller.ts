@@ -11,7 +11,7 @@ import { Throttle, ThrottlerGuard } from '@nestjs/throttler';
 export class VoucherController {
   constructor(private readonly voucherService: VoucherService) {}
 
-  @Throttle({ default: { limit: 5, ttl: 600000 } })
+  @Throttle({ default: { limit: 5, ttl: 60000 } })
   @UseGuards(AuthGuard('jwt'))
   @Post()
   @UsePipes(new ValidationPipe())
