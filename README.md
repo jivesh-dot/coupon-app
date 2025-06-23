@@ -114,3 +114,6 @@ Please refer to .env for configurations
 - Contains **1000 unique coupon codes** seeded and ready for use.
 
 ---
+
+## Test Cases
+npm test
