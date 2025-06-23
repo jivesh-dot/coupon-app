@@ -8,7 +8,7 @@ Please refer to .env for configurations
 - Swagger UI is available at:
 
   ```
-  http://localhost:3000/api
+  [http://localhost:3000/api](http://localhost:3000/api-docs#/)
   ```
 
 - Postman Dump:
