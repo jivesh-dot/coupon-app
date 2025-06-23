@@ -3,7 +3,7 @@
 A service to generate and redeem coupon codes using PostgreSQL, MongoDB, and Redis.
 Please refer to .env for configurations
 
-## 📬 API Documentation
+## API Documentation
 
 - Swagger UI is available at:
 
@@ -19,14 +19,14 @@ Please refer to .env for configurations
 
 ---
 
-## 🚀 Requirements
+## Requirements
 
 - Docker
 - Docker Compose
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 1. **Clone the Repository**
 
@@ -49,7 +49,7 @@ Please refer to .env for configurations
 
 ---
 
-## 🌱 Seed Data
+## Seed Data
 
 1. **Check Running Containers**
 
@@ -83,7 +83,7 @@ Please refer to .env for configurations
 
 ---
 
-## 🧪 Seeded Data Overview
+## Seeded Data Overview
 
 ### PostgreSQL
 
@@ -130,6 +130,3 @@ Please refer to .env for configurations
 - Contains **1000 unique coupon codes** seeded and ready for use.
 
 ---
-
-
-Explore and test all available endpoints from the Swagger interface.
