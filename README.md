@@ -1,20 +1,18 @@
 # Coupon Service
 
-A service to generate and redeem coupon codes using PostgreSQL, MongoDB, and Redis.
+A service to generate and redeem coupon codes using PostgreSQL(Relational Entries), MongoDB(Logging created Coupons) and Redis(Coupon Codes).
 Please refer to .env for configurations
 
 ## API Documentation
 
 - Swagger UI is available at:
 
-  ```
-  [http://localhost:3000/api](http://localhost:3000/api-docs#/)
-  ```
+  [Swagger Link](http://localhost:3000/api-docs#/)
 
 - Postman Dump:
 
   Collection -> [Download Postman Collection](postman/holo-voucher.postman_collection.json)
-  Env -> [Download Postman Collection](postman/holo.postman_environment.json)
+  Env -> [Download Postman Env](postman/holo.postman_environment.json)
   
 
 ---
@@ -70,7 +68,7 @@ Please refer to .env for configurations
 2. **Access the Application Container**
 
    ```bash
-   docker exec -it coupon-service-coupon-service-1 /bin/sh
+   docker exec -it 5de12e8a4327 /bin/sh
    ```
 
 3. **Run the Seed Script**
