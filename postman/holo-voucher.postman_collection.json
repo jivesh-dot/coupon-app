@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "873e7782-0859-4991-b9ff-eb957eed9b26",
+		"name": "holo-voucher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26269810"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test6@example.com\",\n  \"password\": \"secret123\",\n  \"name\": \"Jivesh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}:{{port}}/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();",
+							"",
+							"if (response.access_token) {",
+							"    pm.environment.set(\"token\", response.access_token);",
+							"    console.log(`Token saved to environment variable: token=${response.access_token}`);",
+							"} else {",
+							"    console.warn(\"No token found in response.\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test6@example.com\",\n  \"password\": \"secret123\",\n  \"name\": \"Jivesh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}:{{port}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCoupon",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"specialOfferId\": 1\n    // \"experationDate\": \"2025-12-12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}:{{port}}/voucher",
+					"host": [
+						"{{base_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"voucher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "redeemOffer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"voucherCode\": \"34zf212J\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}:{{port}}/voucher/redeem",
+					"host": [
+						"{{base_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"voucher",
+						"redeem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "specialOffers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test5@example.com\",\n  \"password\": \"secret123\",\n  \"name\": \"Jivesh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}:{{port}}/voucher/special-offers",
+					"host": [
+						"{{base_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"voucher",
+						"special-offers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vouchers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test5@example.com\",\n  \"password\": \"secret123\",\n  \"name\": \"Jivesh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}:{{port}}/voucher",
+					"host": [
+						"{{base_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"voucher"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
